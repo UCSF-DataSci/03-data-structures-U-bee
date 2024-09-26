@@ -42,7 +42,21 @@ def find_greatest_product(number_string, adjacent_digits=13):
     max_product = 0
     
     # Your code here
+    cand = 1
+    #check in-case of really small string
+    if len(number_string) > adjacent_digits:
+        for i in number_string:
+           cand  *= i
+        return max(max_product, cand)
+    zeros = []
+    l = 0
+    for i in range(0, adjacent_digits):
+        if number_string[i] == 0:
+            zeros.append(i)
+        cand *= i
 
+    for r in range(adjacent_digits - 1, len(number_string)):
+        max_product()
     return max_product
 
 if __name__ == "__main__":
