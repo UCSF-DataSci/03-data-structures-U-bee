@@ -23,7 +23,7 @@ def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
-    
+    frequencies['bro'] = 2
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
