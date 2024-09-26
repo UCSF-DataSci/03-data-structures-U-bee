@@ -21,9 +21,17 @@ import sys
 
 def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
+    text = text.lower()
+    wordList = []
 
-    # Your code here
-    frequencies['bro'] = 2
+    #fancy nested splits to decouple all spaces and dashes
+    for firstsplit in text.split():
+        for secondsplit in firstsplit.split('-'):
+            wordList.extend(secondsplit.split('—'))
+    
+    for i in wordList:
+        betterWord = i.strip(",.!?:;\'\"”“-_—,’‘()")
+        frequencies[betterWord] = 1 + frequencies.get(betterWord, 0) 
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
@@ -34,7 +42,7 @@ if __name__ == "__main__":
     
     filename = sys.argv[1]
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding = 'utf-8') as file:
             text = file.read() # Read the entire file into a string
         
         frequencies = word_frequency(text)
