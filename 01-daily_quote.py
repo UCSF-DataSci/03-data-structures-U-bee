@@ -14,15 +14,24 @@ Hint: Look up `random.choice()` to select a random item from a list. You can use
 import random
 from datetime import date
 
-
 quotes = [
     # Create a list of quotes here
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    "The way to get started is to quit talking and begin doing. - Walt Disney",
+    "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+    "If life were predictable it would cease to be life, and be without flavor. - Eleanor Roosevelt",
+    "If you look at what you have in life, you'll always have more. - Oprah Winfrey",
+    "Don't judge each day by the harvest you reap but by the seeds that you plant. - Robert Louis Stevenson",
+    "It is during our darkest moments that we must focus to see the light. - Aristotle",
+    "Do not go where the path may lead, go instead where there is no path and leave a trail. - Ralph Waldo Emerson"
 ]
 
 def get_quote_of_the_day(quotes):
     todays_quote = None
 
     # Your code here
+    random.seed(date.today().weekday())
+    todays_quote = random.choice(quotes)
     
     return todays_quote
 
