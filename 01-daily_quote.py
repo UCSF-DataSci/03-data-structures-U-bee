@@ -32,11 +32,11 @@ def get_quote_of_the_day(quotes):
     # Your code here
     random.seed(date.today().weekday())
     todays_quote = random.choice(quotes)
-    
+    print("0 8 * * * C:/Users/borau/AppData/Local/Programs/Python/Python312/python.exe C:/Users/borau/Documents/Datasci217 Git/03-data-structures-U-bee/01-daily-quote.py >> C:/Users/borau/Documents/daily_quotes.log 2>&1")
     return todays_quote
 
 if __name__ == "__main__":
     print(get_quote_of_the_day(quotes))
 
 # Cron job (add this to your crontab):
-# 0 8 * * * /usr/bin/python3 /path/to/quote_generator.py >> /path/to/daily_quote.txt
+# 0 8 * * * C:/Users/borau/AppData/Local/Programs/Python/Python312/python.exe C:/Users/borau/Documents/Datasci217 Git/03-data-structures-U-bee/01-daily-quote.py >> C:/Users/borau/Documents/daily_quotes.log 2>&1    
