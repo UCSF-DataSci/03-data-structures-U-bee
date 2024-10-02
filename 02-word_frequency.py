@@ -31,7 +31,9 @@ def word_frequency(text):
     
     for i in wordList:
         betterWord = i.strip(",.!?:;\'\"”“-_—,’‘()")
-        frequencies[betterWord] = 1 + frequencies.get(betterWord, 0) 
+        frequencies[betterWord] = 1 + frequencies.get(betterWord, 0)
+        if len(frequencies) >= 20:
+            break
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
